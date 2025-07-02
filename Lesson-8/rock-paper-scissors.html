@@ -36,6 +36,8 @@
             ties: 0
           };
 
+          localStorage.getItem('message')
+
           //1. Computer randomly selects a move.
 
           function pickComputerMove () {
@@ -102,6 +104,8 @@
             } else if (result === 'Tie.') {
               score.ties += 1;
             };
+            
+            localStorage.setItem('message', 'hello');
 
             //4. Display the result and the score in a pop-up. 
           
