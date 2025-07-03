@@ -25,20 +25,27 @@
           score.wins = 0;
           score.losses = 0;
           score.ties = 0;
+          localStorage.removeItem(); //This removes the score from localStorage completely, but we still default value 0//
         ">Reset Score</button>
         
 
         <script>
 
-          const score = {
-            wins: 0,
-            losses: 0,
-            ties: 0
-          };
+          //6. Gets score from localStorage//
 
-          localStorage.getItem('message')
+          let score = JSON.parse(localStorage.getItem('score')); //When we load the page we get the score that we saved from last time// //Convert back to object//
 
-          //1. Computer randomly selects a move.
+          if(score === null) { //localStorage.removeItem() completely removes the score values, this sets it to 0//
+
+            score = {
+              wins: 0,
+              losses: 0,
+              ties: 0
+            }
+
+          }
+
+          //1. Computer randomly selects a move//
 
           function pickComputerMove () {
 
@@ -56,7 +63,7 @@
 
           }
           
-          //2. Compare the moves to get a result.
+          //2. Compare the moves to get a result//
 
           function playGame(playerMove) {
 
@@ -95,7 +102,7 @@
 
             }
 
-            //3. Update a score.
+            //3. Update a score//
 
             if (result === 'You win.'){
               score.wins += 1;
@@ -104,10 +111,12 @@
             } else if (result === 'Tie.') {
               score.ties += 1;
             };
-            
-            localStorage.setItem('message', 'hello');
 
-            //4. Display the result and the score in a pop-up. 
+            //4. Saves score into localStorage//
+
+            localStorage.setItem('score', JSON.stringify(score)); //Have to convert object (score) to string in order to store in localStorage//
+
+            //.5 Display the result and the score in a pop-up// 
           
             alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
             Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
