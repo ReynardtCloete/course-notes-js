@@ -22,10 +22,10 @@
         ">Scissors</button>
         
         <button onclick="
-          score.wins = 0;
-          score.losses = 0;
-          score.ties = 0;
-          localStorage.removeItem(); //This removes the score from localStorage completely, but we still default value 0//
+          score.wins = 0; //This only resets the score in memory, not in local storage//
+          score.losses = 0; //This only resets the score in memory, not in local storage//
+          score.ties = 0; //This only resets the score in memory, not in local storage//
+          localStorage.removeItem(); //This resets it in local storage//
         ">Reset Score</button>
         
 
