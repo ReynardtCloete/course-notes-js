@@ -17,22 +17,27 @@
           console.log(product);
           console.log(product.name);
           console.log(product.price);
+
           
           product.name = 'cotton socks';
           console.log(product);
+
           
           product.newProperty = true;
           console.log(product);
+
 
           //Bracket notation. Used when dot notation doesn't work//
           const product2 = {
             name: 'shirt',
             'delivery-time': '1 day',
+
             
             rating: {
               stars: 4.5,
               count: 87
             },
+
             
             fun: function function1 () { //Function inside object is called a Method//
               console.log('function inside object');
@@ -44,23 +49,69 @@
           console.log(product2.name);
           console.log(product2['name']);
           console.log(product2['delivery-time']);
+
           
           console.log(product2.rating.count);
           product2.fun();
           //console.log is also a method. console is an object provided by JS and log is a a function stored in that object//
+
           
           //JSON OBJECT
           JSON.stringify(product2); //Converts JS object to JSON// // //Single quotes are also changed to double//
           console.log(JSON.stringify(product2)); //The object above is not in there because JSON doesn't support functions//
           console.log(typeof JSON.stringify(product2)); //It also a string now, and a JSON object//
 
+
           const jsonString = JSON.stringify(product2); //Lets put the JSON object in a variable to access easily below//
           JSON.parse(jsonString); //Change back into JS object//
+
 
           //LOCAL STORAGE OBJECT //ONLY SUPPORTS STRINGS
           localStorage.setItem('message', 'hello'); //To store the item 'hello'//
           localStorage.getItem('message'); //To retrieve the item 'hello'//
-            
+
+
+          console.log('hello'.length); //Strings can also, like objects, have properties// //Cause JS automatically auto-boxes the string as an object//
+          console.log('hello'.toUpperCase); //And they can have methods//
+
+
+          //The values of objects can be changed even when its a const variable. This is because an object is only a reference to values stored somewhere in computer's memory//
+          const object1 = {
+            message: 'hello' //This is a reference//
+          };
+
+          const object2 = object1; //Here we aren't copying the object into the variable, we're only copying the reference// //So object2 has the same reference as object1//
+
+          object1.message = 'good job'; //Here it's changed//
+          console.log(object1);
+          console.log(object2);
+
+          const object3 = {
+            message: 'good job'
+          };
+
+          console.log(object3 === object1); //This will be false even though they have the same values, because it's comparing the reference and not the value//
+          console.log(object2 === object1); //This will be the same because it's reference is the same//
+          //So when you're comparing 2 variables that contain objects, you're comparing references and not values//
+
+
+          const object4 = {
+            message: 'good job',
+            price: 799
+          };
+
+          const message2 = object4.message;
+          const { message, price } = object4; //This does the same thing ass above// //Stores inside variables message and price// //Easier way to take properties out of an object//
+
+          const object5 = {
+            message,
+            method() { //Shortcut function//
+              console.log('method')
+            } 
+          } 
+          
+          console.log(object5); //Will result in "'message: 'good job'"//
+
         </script>
 
     </body>

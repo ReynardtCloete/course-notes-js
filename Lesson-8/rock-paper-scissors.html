@@ -25,7 +25,7 @@
           score.wins = 0; //This only resets the score in memory, not in local storage//
           score.losses = 0; //This only resets the score in memory, not in local storage//
           score.ties = 0; //This only resets the score in memory, not in local storage//
-          localStorage.removeItem(); //This resets it in local storage//
+          localStorage.removeItem('score'); //This also removes score from local storage//
         ">Reset Score</button>
         
 
@@ -33,16 +33,12 @@
 
           //6. Gets score from localStorage//
 
-          let score = JSON.parse(localStorage.getItem('score')); //When we load the page we get the score that we saved from last time// //Convert back to object//
-
-          if(score === null) { //localStorage.removeItem() completely removes the score values, this sets it to 0//
-
-            score = {
-              wins: 0,
-              losses: 0,
-              ties: 0
-            }
-
+          //When we load the page we get the score that we saved from last time// //Convert back to object//
+          let score = JSON.parse(localStorage.getItem('score')) || { 
+          //localStorage.removeItem() completely removes the score values, this gives it value of 0//
+            wins: 0,
+            losses: 0,
+            ties: 0
           }
 
           //1. Computer randomly selects a move//
