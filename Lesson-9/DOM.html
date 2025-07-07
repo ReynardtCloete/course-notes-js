@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>DOM</title>
+  </head>
+
+    <body>
+
+        <button>Hello</button>
+        <button class="js-button">Second Button</button>
+
+        <script> //DOM - document object model; because it 'models' the page//
+
+            console.log(document.body); //Literally puts body element inside this JS script// //This element is converted into a JS object//
+            console.log(typeof document.body); //It's an object see//
+
+            document.body.innerHTML; //Controls all the html inside body//
+            console.log(document.body.innerHTML); //See, all the html//
+
+            document.body.innerHTML = 'changed'; //document is also a built-in object// //removes all html and puts in 'hello'//
+            console.log(document.body.innerHTML = '<button>Good Job!</button>'); //innerHTML gives us control of all html in body//
+
+
+            document.querySelector('button'); //Document also has methods, this is one//
+            console.log(document.querySelector('button'));
+            console.log(document.querySelector('button').innerHTML); //Gets the html inside the button element//
+
+            document.querySelector('button').innerHTML = 'changed'; //Changes the html//
+            console.log(document.querySelector('button').innerHTML);
+
+            //Select second button//
+            document.querySelector('.js-button');
+            console.log(document.querySelector('.js-button'));
+
+        </script>
+
+    </body>
+
+</html>
+
