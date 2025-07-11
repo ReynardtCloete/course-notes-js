@@ -54,7 +54,7 @@
             document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`; //Shows score when page starts/
           };
 
-           updateScoreElement();
+          updateScoreElement();
           
 
 
@@ -121,40 +121,40 @@
               };
 
             };
+          };
 
 
 
 
 
-            //3. Update a score//
-
-            if (result === 'You win.'){
-              score.wins += 1;
-            } else if (result === 'You lose.'){
-              score.losses += 1;
-            } else if (result === 'Tie.') {
-              score.ties += 1;
-            };
-
-
-
-
-
-            //4. Saves score into localStorage//
-
-            localStorage.setItem('score', JSON.stringify(score)); //Have to convert object (score) to string in order to store in localStorage//
+          //3. Update a score//
+          if (result === 'You win.'){
+            score.wins += 1;
+          } else if (result === 'You lose.'){
+            score.losses += 1;
+          } else if (result === 'Tie.') {
+            score.ties += 1;
+          };
 
 
 
 
 
-            //.5 Display the result and the score in a pop-up//
+          //4. Saves score into localStorage//
 
-            updateScoreElement(); //Shows updated score after playing
+          localStorage.setItem('score', JSON.stringify(score)); //Have to convert object (score) to string in order to store in localStorage//
 
-            document.querySelector('.js-result').innerHTML = result;
 
-            document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+
+
+
+          //.5 Display the result and the score in a pop-up//
+
+          updateScoreElement(); //Shows updated score after playing
+
+          document.querySelector('.js-result').innerHTML = result;
+
+          document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
 
 
 
