@@ -9,10 +9,21 @@
 
       <p>YouTube Subscribe Button</p>
 
-      <button onclick="subscribe()" class="js-subscribe-button">Subscribe</button>
+      <button onclick="subscribe();" class="js-subscribe-button">Subscribe</button>
+
+      <p>Amazon Shipping Calculator</p>
+
+      <input placeholder="Cost of order" class="js-cost-input">
+
+      <button onclick="calculateTotal();">Calculate</button>
       
 
       <script> 
+
+        function calculateTotal() {
+          const inputElement = document.querySelector('.js-cost-input'); //Puts input element inside JS//
+          const cost = inputElement.value; //Gets text inside input element//
+        }
 
         function subscribe() {
           const subscribeButton = document.querySelector('.js-subscribe-button');
