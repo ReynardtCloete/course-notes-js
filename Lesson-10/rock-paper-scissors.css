@@ -8,3 +8,17 @@ body {
     font-size: 30px;
     font-weight: bold;
 }
+
+.move-icon {
+    height: 60px;
+}
+
+.move-button {
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    cursor: pointer;
+}
