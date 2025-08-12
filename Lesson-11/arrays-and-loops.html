@@ -80,6 +80,42 @@
         numsDoubled.push(num * 2);
       }
 
+      //Arrays are references like objects//
+      const array1 = [1, 2, 3];
+      const array2 = array1;
+      array2.push(4);
+
+      console.log(array1); //=[1, 2, 3, 4]
+      console.log(array2); //=[1, 2, 3, 4]
+
+      //But if you do this...//
+      //const array2 = array1.slice();
+      //It makes a copy of the contents of array1 and push will only apply to array2//
+
+      //Getting values//
+      const[firstValue, secondValue] = [1, 2, 3];
+
+      //Breaks//
+      for (let i = 1; 1 <= 10; i++) {
+        console.log(i);
+        if (i === 8) {
+          break;
+        }
+      }
+
+      //Loop function for doubling array numbers//
+
+      function doubleArray(nums) {
+        const numsDoubled = [];
+
+        for (let 1 = 0; i <= nums.length; i++) {
+          const num = nums[i];
+          numsDoubled = (num * 2);
+        }
+
+      }
+      nums = [1, 1, 3];
+
     </script>
 
   </body>
