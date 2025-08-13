@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Advanced Functions</title>
+  </head>
+
+  <body>
+
+    <script>
+        
+        //Functions are values//
+        function greeting() {
+            console.log('hello');
+        }
+        greeting();
+
+        //Store function in variable//
+        const function1 = function() { //Anonymous function (function without a name)//
+            console.log('hello2');
+        };
+        console.log(function1);
+        console.log(typeof function1); //Shows it's a function//
+        function1() //We can call this function with variable name//
+
+        //We can save functions inside objects too//
+        const object1 = {
+            num: 2,
+            fun: function() {
+                console.log('hello3');
+            }
+        };
+        object1.fun(); //This is a method; function saved inside object//
+
+        //Passing values into functions//
+        function display(param) {
+            console.log(param);
+        }
+        display(2);
+
+        //We can also pass functions into functions//
+        function run(param) {
+            param(); //Displays 'hello4'//
+        }
+        run(function() { //This is a callback function//
+            console.log('hello4');
+        })
+
+        //Time Out, function in a function//setTimeout is asynchronous code, it doesn't wait for the 3 second timer before it moves to 'next line'//
+        setTimeout(function() { //Takes 2 arguments, first a function, then the time before execute//
+            console.log('timeout');
+        }, 3000);
+
+        console.log('next line');
+
+        //Set Interval - does the same as time out but repeats every 3 seconds//
+        setInterval(function() {
+            console.log('interval');
+        }, 3000);
+
+        console.log('next line 2');
+
+    </script>
+
+  </body>
+
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
