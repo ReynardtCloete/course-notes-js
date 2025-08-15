@@ -12,16 +12,16 @@ renderTodoList();
 function renderTodoList() {
     let todoListHtml = '';
 
-    for (let i = 0; i < todoList.length; i++) {
-        const todoObject = todoList[i];
-        const {name, dueDate} = todoObject;
+    forEach(function(todoObject, index) {
+
+        const {name, dueDate} = todoObject; //This is shorthand for 'const name = todoObject.name' etc//
 
         const html = `
             <p>
               ${name} ${dueDate}
 
               <button onclick="
-                todoList.splice(${i}, 1);
+                todoList.splice(${index}, 1);
                 renderTodoList();
               ">Delete</button> 
 
@@ -29,7 +29,7 @@ function renderTodoList() {
         `;
 
         todoListHtml += html;
-    }
+    });
 
     document.querySelector('.js-todo-list').innerHTML = todoListHtml;
 }

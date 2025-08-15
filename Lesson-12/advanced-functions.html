@@ -60,6 +60,22 @@
 
         console.log('next line 2');
 
+        //Another loop method for arrays//
+        //And Skip inside//
+        [
+            'make dinner',
+            'wash dishes',
+            'watch youtube'
+        ].forEach(function(value, index) { //Another function inside function. Passes strings into parameter//
+            if(value === 'wash dishes') {
+                return; //Ends function here//
+            }
+
+            console.log(index);
+            console.log(value);
+        });
+
+
     </script>
 
   </body>
