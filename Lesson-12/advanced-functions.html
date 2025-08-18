@@ -66,7 +66,7 @@
             'make dinner',
             'wash dishes',
             'watch youtube'
-        ].forEach(function(value, index) { //Another function inside function. Passes strings into parameter//
+        ].forEach((value, index) => { //Another function inside function. Passes strings into parameter//
             if(value === 'wash dishes') {
                 return; //Ends function here//
             }
@@ -76,15 +76,45 @@
         });
 
         //Arrow Functions vs Regular Functions//
-        const regularFunction = function() {
+        const regularFunction = function(param, param2) {
             console.log('hello');
+            return 5;
         };
         regularFunction();
 
-        const arrowFunction = () => {
+        const arrowFunction = (param, param2) => {
             console.log('hello');
+            return 5;
         };
         arrowFunction();
+
+        const oneParam = param => { //In Arrow function, when only one parameter, no brackets needed//
+            console.log(param + 1);
+        };
+        oneParam(2);
+
+        const oneLine = () => 2 + 3; //Can remove curly brackets and returns value on the right//
+        console.log(oneLine());
+
+        //Filter//
+        [1, -3, 5].filter((value, index) => { //Creates new array that only returns positive numbers//
+            if(value => 0) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+        //Or Shorter//
+        [1, -3, 5].filter((value, index) => {
+            return value >= 0;
+        });
+
+        //Map. Transforms array into another array//
+        [1, 1, 3].map((value, index) => {
+            return value + 10;
+        });
+        //Shortcut//
+        [1, 1, 3].map(value => value + 10); //Removes parameter brackets cause there's only 1 parameter, and removes curly brackets//
 
 
     </script>
